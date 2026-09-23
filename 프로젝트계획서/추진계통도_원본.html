@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>추진 계통도</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #fff; }
+  svg { display: block; font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+  .box { fill: #fff; stroke: #333; stroke-width: 1.2; }
+  .pm { fill: #f2f2f2; }
+  .band { fill: #e6e6e6; stroke: none; }
+  .line { stroke: #333; stroke-width: 1.2; fill: none; }
+  .label { font-size: 12.5px; fill: #555; }
+  .name { font-size: 17px; font-weight: 700; fill: #111; }
+  .part { font-size: 14.5px; font-weight: 700; fill: #111; }
+  .duty { font-size: 12.5px; fill: #333; }
+  .common { fill: #fafafa; stroke: #555; stroke-width: 1.1; stroke-dasharray: 5 4; }
+</style>
+</head>
+<body>
+<svg width="800" height="448" viewBox="0 0 800 448" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- 지도교수 -->
+  <rect class="box" x="300" y="14" width="200" height="60" rx="4"/>
+  <text class="label" x="400" y="37" text-anchor="middle">지도교수</text>
+  <text class="name" x="400" y="61" text-anchor="middle">이병정 교수</text>
+
+  <!-- 보고·피드백 -->
+  <line class="line" x1="400" y1="76" x2="400" y2="118" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <text class="label" x="412" y="101">발표·보고서 제출 / 피드백</text>
+
+  <!-- PM -->
+  <rect class="box pm" x="270" y="120" width="260" height="76" rx="4"/>
+  <text class="label" x="400" y="142" text-anchor="middle">PM (팀장)</text>
+  <text class="name" x="400" y="165" text-anchor="middle">백형우</text>
+  <text class="duty" x="400" y="186" text-anchor="middle">일정·산출물 총괄, 회의 진행</text>
+
+  <!-- 파트 연결선 -->
+  <line class="line" x1="400" y1="196" x2="400" y2="222"/>
+  <line class="line" x1="140" y1="222" x2="660" y2="222"/>
+  <line class="line" x1="140" y1="222" x2="140" y2="244"/>
+  <line class="line" x1="400" y1="222" x2="400" y2="244"/>
+  <line class="line" x1="660" y1="222" x2="660" y2="244"/>
+
+  <!-- 백엔드 -->
+  <rect class="box" x="25" y="244" width="230" height="132" rx="4"/>
+  <rect class="band" x="25.6" y="244.6" width="228.8" height="30"/>
+  <line class="line" x1="25" y1="275" x2="255" y2="275"/>
+  <text class="part" x="140" y="265" text-anchor="middle">백엔드 파트</text>
+  <text class="name" x="140" y="300" text-anchor="middle">최유성 · 문성빈</text>
+  <text class="duty" x="140" y="323" text-anchor="middle">Spring Boot 서버</text>
+  <text class="duty" x="140" y="342" text-anchor="middle">DB 설계·구현, REST API</text>
+  <text class="duty" x="140" y="361" text-anchor="middle">문자 알림(SENS) 연동</text>
+
+  <!-- 프론트엔드 -->
+  <rect class="box" x="285" y="244" width="230" height="132" rx="4"/>
+  <rect class="band" x="285.6" y="244.6" width="228.8" height="30"/>
+  <line class="line" x1="285" y1="275" x2="515" y2="275"/>
+  <text class="part" x="400" y="265" text-anchor="middle">프론트엔드 파트</text>
+  <text class="name" x="400" y="300" text-anchor="middle">백형우</text>
+  <text class="duty" x="400" y="323" text-anchor="middle">고객 웹 화면(GUI)</text>
+  <text class="duty" x="400" y="342" text-anchor="middle">직원 웹 화면(상품 기획·창고)</text>
+  <text class="duty" x="400" y="361" text-anchor="middle">서버 API 연동</text>
+
+  <!-- AI -->
+  <rect class="box" x="545" y="244" width="230" height="132" rx="4"/>
+  <rect class="band" x="545.6" y="244.6" width="228.8" height="30"/>
+  <line class="line" x1="545" y1="275" x2="775" y2="275"/>
+  <text class="part" x="660" y="265" text-anchor="middle">AI(음성인식) 파트</text>
+  <text class="name" x="660" y="300" text-anchor="middle">전원 공동</text>
+  <text class="duty" x="660" y="323" text-anchor="middle">STT 음성→텍스트 변환</text>
+  <text class="duty" x="660" y="342" text-anchor="middle">LLM 발화 의도 파악</text>
+  <text class="duty" x="660" y="361" text-anchor="middle">음성 주문 흐름 통합</text>
+
+  <!-- 공통 -->
+  <rect class="common" x="25" y="394" width="750" height="40" rx="4"/>
+  <text class="duty" x="400" y="419" text-anchor="middle" style="font-size:13.5px"><tspan font-weight="700">공통(전원)</tspan>  요구분석·UML 설계,  통합 테스트,  발표·보고서 작성</text>
+</svg>
+</body>
+</html>
