@@ -1,0 +1,40 @@
+{
+  "tool": "draw_component_diagram",
+  "file_name": "COMP_CLIENT",
+  "elements": [
+    {"kind": "package", "name": "Web Client", "left": 40, "top": 150},
+    {"kind": "component_icon", "name": "member", "left": 230, "top": 230, "width": 120, "height": 50, "in": "Web Client"},
+    {"kind": "component_icon", "name": "booking", "left": 420, "top": 230, "width": 120, "height": 50, "in": "Web Client"},
+    {"kind": "component_icon", "name": "voice", "left": 610, "top": 230, "width": 120, "height": 50, "in": "Web Client"},
+    {"kind": "component_icon", "name": "tour", "left": 800, "top": 230, "width": 120, "height": 50, "in": "Web Client"},
+    {"kind": "component_icon", "name": "warehouse", "left": 990, "top": 230, "width": 120, "height": 50, "in": "Web Client"},
+    {"kind": "component_icon", "name": "common", "left": 290, "top": 400, "width": 760, "height": 50, "in": "Web Client"},
+    {"kind": "lollipop", "id": "member:회원 API", "name": "회원 API", "left": 240, "top": 70, "name_side": "top"},
+    {"kind": "lollipop", "id": "member:신청 API", "name": "신청 API", "left": 320, "top": 70, "name_side": "top"},
+    {"kind": "lollipop", "id": "booking:상품 API", "name": "상품 API", "left": 430, "top": 70, "name_side": "top"},
+    {"kind": "lollipop", "id": "booking:신청 API", "name": "신청 API", "left": 510, "top": 70, "name_side": "top"},
+    {"kind": "lollipop", "id": "voice:음성 API", "name": "음성 API", "left": 660, "top": 70, "name_side": "top"},
+    {"kind": "lollipop", "id": "tour:상품 기획 API", "name": "상품 기획 API", "left": 850, "top": 70, "name_side": "top"},
+    {"kind": "lollipop", "id": "warehouse:창고 API", "name": "창고 API", "left": 1040, "top": 70, "name_side": "top"},
+    {"kind": "artifact_icon", "id": "build", "name": ["Web Client 빌드 결과", "(index.html, assets/)"], "left": 1220, "top": 300}
+  ],
+  "relations": [
+    {"kind": "requires", "from": "member", "to": "member:회원 API"},
+    {"kind": "requires", "from": "member", "to": "member:신청 API"},
+    {"kind": "requires", "from": "booking", "to": "booking:상품 API"},
+    {"kind": "requires", "from": "booking", "to": "booking:신청 API"},
+    {"kind": "requires", "from": "voice", "to": "voice:음성 API"},
+    {"kind": "requires", "from": "tour", "to": "tour:상품 기획 API"},
+    {"kind": "requires", "from": "warehouse", "to": "warehouse:창고 API"},
+    {"kind": "dependency", "from": "booking", "to": "common"},
+    {"kind": "dependency", "from": "booking", "to": "voice"},
+    {"kind": "dependency", "from": "member", "to": "booking"},
+    {"kind": "dependency", "from": "member", "to": "common"},
+    {"kind": "dependency", "from": "tour", "to": "common"},
+    {"kind": "dependency", "from": "voice", "to": "common"},
+    {"kind": "dependency", "from": "voice", "to": "member", "via": [[624, 340], [306, 340]]},
+    {"kind": "dependency", "from": "warehouse", "to": "common"},
+    {"kind": "dependency", "from": "build", "to": "Web Client", "stereotype": "Implementation"}
+  ],
+  "scale": 1.6
+}

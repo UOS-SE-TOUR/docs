@@ -1,0 +1,24 @@
+{
+  "tool": "draw_component_diagram",
+  "file_name": "REAL_SERVER_BOOKING",
+  "elements": [
+    {"kind": "component_icon", "name": "booking", "left": 40, "top": 114, "width": 170, "height": 344},
+    {"kind": "class", "name": "BookingController", "left": 360, "top": 40},
+    {"kind": "class", "name": "BookingService", "left": 360, "top": 114},
+    {"kind": "class", "name": "BookingRepository", "left": 360, "top": 188},
+    {"kind": "class", "name": "Booking", "left": 360, "top": 262},
+    {"kind": "class", "name": "PriceCalculator", "left": 360, "top": 336},
+    {"kind": "class", "name": "RegularDiscountPolicy", "left": 360, "top": 410},
+    {"kind": "class", "name": "PriceQuote", "left": 360, "top": 484}
+  ],
+  "relations": [
+    {"kind": "realization", "from": "BookingController", "to": "booking", "via": [[300, 64]]},
+    {"kind": "realization", "from": "BookingService", "to": "booking", "via": [[300, 138]]},
+    {"kind": "realization", "from": "BookingRepository", "to": "booking", "via": [[300, 212]]},
+    {"kind": "realization", "from": "Booking", "to": "booking"},
+    {"kind": "realization", "from": "PriceCalculator", "to": "booking", "via": [[300, 360]]},
+    {"kind": "realization", "from": "RegularDiscountPolicy", "to": "booking", "via": [[300, 434]]},
+    {"kind": "realization", "from": "PriceQuote", "to": "booking", "via": [[300, 508]]}
+  ],
+  "scale": 1.6
+}
