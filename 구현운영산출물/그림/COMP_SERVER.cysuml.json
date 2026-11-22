@@ -1,0 +1,43 @@
+{
+  "tool": "draw_component_diagram",
+  "file_name": "COMP_SERVER",
+  "elements": [
+    {"kind": "package", "name": "Tour Server", "left": 160, "top": 150},
+    {"kind": "component_icon", "name": "member", "left": 200, "top": 400, "width": 120, "height": 50, "in": "Tour Server"},
+    {"kind": "component_icon", "name": "tour", "left": 760, "top": 400, "width": 120, "height": 50, "in": "Tour Server"},
+    {"kind": "component_icon", "name": "booking", "left": 440, "top": 230, "width": 120, "height": 50, "in": "Tour Server"},
+    {"kind": "component_icon", "name": "voice", "left": 880, "top": 230, "width": 120, "height": 50, "in": "Tour Server"},
+    {"kind": "component_icon", "name": "notification", "left": 440, "top": 400, "width": 120, "height": 50, "in": "Tour Server"},
+    {"kind": "component_icon", "name": "warehouse", "left": 660, "top": 230, "width": 120, "height": 50, "in": "Tour Server"},
+    {"kind": "component_icon", "name": "common.security", "left": 200, "top": 560, "width": 120, "height": 50, "in": "Tour Server"},
+    {"kind": "lollipop", "id": "회원 API", "name": "회원 API", "left": 76, "top": 390, "name_side": "top"},
+    {"kind": "lollipop", "id": "상품 API", "name": "상품 API", "left": 1056, "top": 390, "name_side": "top"},
+    {"kind": "lollipop", "id": "신청 API", "name": "신청 API", "left": 480, "top": 70, "name_side": "top"},
+    {"kind": "lollipop", "id": "음성 API", "name": "음성 API", "left": 920, "top": 70, "name_side": "top"},
+    {"kind": "lollipop", "id": "상품 기획 API", "name": "상품 기획 API", "left": 814, "top": 710, "name_side": "right"},
+    {"kind": "lollipop", "id": "창고 API", "name": "창고 API", "left": 700, "top": 70, "name_side": "top"},
+    {"kind": "lollipop", "id": "SmsSender:booking", "name": "SmsSender", "left": 494, "top": 330, "name_side": "right", "in": "Tour Server"},
+    {"kind": "lollipop", "id": "SmsSender:member", "name": "SmsSender", "left": 336, "top": 415, "name_side": "bottom", "in": "Tour Server"},
+    {"kind": "artifact_icon", "name": "app.jar", "left": 40, "top": 690}
+  ],
+  "relations": [
+    {"kind": "association", "from": "member", "to": "회원 API"},
+    {"kind": "association", "from": "tour", "to": "상품 API"},
+    {"kind": "association", "from": "booking", "to": "신청 API"},
+    {"kind": "association", "from": "voice", "to": "음성 API"},
+    {"kind": "association", "from": "tour", "to": "상품 기획 API"},
+    {"kind": "association", "from": "warehouse", "to": "창고 API"},
+    {"kind": "dependency", "from": "booking", "to": "member"},
+    {"kind": "association", "from": "notification", "to": "SmsSender:booking"},
+    {"kind": "requires", "from": "booking", "to": "SmsSender:booking"},
+    {"kind": "dependency", "from": "booking", "to": "tour"},
+    {"kind": "dependency", "from": "booking", "to": "warehouse"},
+    {"kind": "association", "from": "notification", "to": "SmsSender:member"},
+    {"kind": "requires", "from": "member", "to": "SmsSender:member"},
+    {"kind": "dependency", "from": "voice", "to": "tour"},
+    {"kind": "dependency", "from": "warehouse", "to": "tour"},
+    {"kind": "dependency", "from": "member", "to": "common.security"},
+    {"kind": "dependency", "from": "app.jar", "to": "Tour Server", "stereotype": "Implementation"}
+  ],
+  "scale": 1.6
+}

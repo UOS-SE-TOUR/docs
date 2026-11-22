@@ -1,0 +1,20 @@
+{
+  "tool": "draw_component_diagram",
+  "file_name": "REAL_CLIENT_BOOKING",
+  "elements": [
+    {"kind": "component_icon", "name": "booking", "left": 40, "top": 92, "width": 170, "height": 240},
+    {"kind": "class", "name": "PreviousToursPopup", "left": 360, "top": 40},
+    {"kind": "class", "name": "TourSelectPage", "left": 360, "top": 114},
+    {"kind": "class", "name": "OptionPanel", "left": 360, "top": 188},
+    {"kind": "class", "name": "PriceSummary", "left": 360, "top": 262},
+    {"kind": "class", "name": "MyBookingsPage", "left": 360, "top": 336}
+  ],
+  "relations": [
+    {"kind": "realization", "from": "PreviousToursPopup", "to": "booking", "via": [[300, 64]]},
+    {"kind": "realization", "from": "TourSelectPage", "to": "booking", "via": [[300, 138]]},
+    {"kind": "realization", "from": "OptionPanel", "to": "booking"},
+    {"kind": "realization", "from": "PriceSummary", "to": "booking", "via": [[300, 286]]},
+    {"kind": "realization", "from": "MyBookingsPage", "to": "booking", "via": [[300, 360]]}
+  ],
+  "scale": 1.6
+}

@@ -1,0 +1,24 @@
+{
+  "tool": "draw_deployment_diagram",
+  "file_name": "DEPLOY",
+  "elements": [
+    {"kind": "node", "id": "client", "name": "고객·직원 컴퓨터", "left": 40, "top": 330, "width": 220, "height": 120},
+    {"kind": "node", "id": "hosting", "name": "정적 호스팅(Vercel)", "left": 400, "top": 330, "width": 220, "height": 120},
+    {"kind": "node", "id": "server", "name": "서버(AWS Lightsail)", "left": 760, "top": 330, "width": 220, "height": 120},
+    {"kind": "package", "name": "Web Client", "left": 65, "top": 90, "width": 170, "height": 90},
+    {"kind": "package", "name": "Tour Server", "left": 785, "top": 90, "width": 170, "height": 90},
+    {"kind": "component_icon", "name": "MySQL", "left": 815, "top": 560, "width": 120, "height": 50, "id": "MySQL", "stereotype": "database"},
+    {"kind": "artifact_icon", "id": "build", "name": ["Web Client 빌드 결과", "(index.html, assets/)"], "left": 330, "top": 80, "name_side": "bottom"},
+    {"kind": "artifact_icon", "name": "app.jar", "left": 1110, "top": 105}
+  ],
+  "relations": [
+    {"kind": "association", "from": "client", "to": "hosting", "name": "HTTPS"},
+    {"kind": "association", "from": "hosting", "to": "server", "name": "HTTPS"},
+    {"kind": "dependency", "from": "Web Client", "to": "client", "stereotype": "deploy"},
+    {"kind": "dependency", "from": "Tour Server", "to": "server", "stereotype": "deploy"},
+    {"kind": "dependency", "from": "MySQL", "to": "server", "stereotype": "deploy"},
+    {"kind": "dependency", "from": "build", "to": "Web Client", "stereotype": "Implementation"},
+    {"kind": "dependency", "from": "app.jar", "to": "Tour Server", "stereotype": "Implementation"}
+  ],
+  "scale": 1.6
+}

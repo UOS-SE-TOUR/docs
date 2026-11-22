@@ -1,0 +1,14 @@
+{
+  "tool": "draw_component_diagram",
+  "file_name": "COMP_ALL",
+  "elements": [
+    {"kind": "package", "name": "Web Client", "left": 40, "top": 40, "width": 170, "height": 90},
+    {"kind": "package", "name": "Tour Server", "left": 330, "top": 40, "width": 170, "height": 90},
+    {"kind": "component_icon", "name": "MySQL", "left": 620, "top": 61, "width": 120, "height": 50, "id": "MySQL", "stereotype": "database"}
+  ],
+  "relations": [
+    {"kind": "dependency", "from": "Web Client", "to": "Tour Server"},
+    {"kind": "dependency", "from": "Tour Server", "to": "MySQL"}
+  ],
+  "scale": 1.6
+}
