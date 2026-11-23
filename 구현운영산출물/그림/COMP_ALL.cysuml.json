@@ -4,7 +4,7 @@
   "elements": [
     {"kind": "package", "name": "Web Client", "left": 40, "top": 40, "width": 170, "height": 90},
     {"kind": "package", "name": "Tour Server", "left": 330, "top": 40, "width": 170, "height": 90},
-    {"kind": "component_icon", "name": "MySQL", "left": 620, "top": 61, "width": 120, "height": 50, "id": "MySQL", "stereotype": "database"}
+    {"kind": "package", "name": "MySQL", "left": 620, "top": 40, "width": 170, "height": 90}
   ],
   "relations": [
     {"kind": "dependency", "from": "Web Client", "to": "Tour Server"},
